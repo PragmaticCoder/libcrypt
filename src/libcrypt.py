@@ -4,9 +4,7 @@ class LibCrypt(object):
 
     @property
     def _decryption_codes(self):
-        # TODO:
-        # Reverse Key Value Pair
-        pass
+        return {num: vowel for vowel, num in self._encryption_codes.items()}
 
     @staticmethod
     def _contains_digit(content):

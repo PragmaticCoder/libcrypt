@@ -39,3 +39,10 @@ def test_transform_cycle():
 
     result = LibCrypt(codes=codes).transform(content)
     assert LibCrypt(codes=codes).transform(result) == content
+
+
+def test_transform_when_empty_string():
+    codes = {'a': 1, 'e': 2, 'i': 3, 'o': 4, 'u': 5}
+    content = ''
+
+    assert len(LibCrypt(codes=codes).transform(content)) == 0

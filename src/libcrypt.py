@@ -1,9 +1,6 @@
 class LibCrypt(object):
     def __init__(self, codes):
-        # TODO:
-        # Initialize codes dict
-        # Ensure nums to string conversion here
-        pass
+        self._encryption_codes = {_: str(num) for _, num in codes.items()}
 
     @property
     def _decryption_codes(self):

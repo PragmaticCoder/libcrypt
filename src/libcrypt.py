@@ -21,10 +21,7 @@ class LibCrypt(object):
         pass
 
     def transform(self, content):
-        if self._contains_digit(content):
-            return self._decode(content)
-
-        return self._encode(content)
+        return self._decode(content) if self._contains_digit(content) else self._encode(content)
 
 
 def main():

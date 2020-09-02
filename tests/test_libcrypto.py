@@ -31,3 +31,11 @@ def test_transform_returns_decrypted_string():
     content = 'th3s 3s 1 m2ss1g2.'
 
     assert LibCrypt(codes=codes).transform(content) == 'this is a message.'
+
+
+def test_transform_cycle():
+    codes = {'a': 1, 'e': 2, 'i': 3, 'o': 4, 'u': 5}
+    content = 'th3s 3s 1 m2ss1g2.'
+
+    result = LibCrypt(codes=codes).transform(content)
+    assert LibCrypt(codes=codes).transform(result) == content

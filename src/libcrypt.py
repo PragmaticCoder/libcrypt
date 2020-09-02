@@ -8,9 +8,7 @@ class LibCrypt(object):
 
     @staticmethod
     def _contains_digit(content):
-        # TODO:
-        # Check if string contains any digits
-        pass
+        return any(map(str.isdigit, content))
 
     def _encode(self, content):
         # TODO:

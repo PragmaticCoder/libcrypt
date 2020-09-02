@@ -46,3 +46,10 @@ def test_transform_when_empty_string():
     content = ''
 
     assert len(LibCrypt(codes=codes).transform(content)) == 0
+
+
+def test_transform_when_empty_codes():
+    codes = {}
+    content = 'th3s 3s 1 m2ss1g2.'
+
+    assert LibCrypt(codes=codes).transform(content) == 'th3s 3s 1 m2ss1g2.'

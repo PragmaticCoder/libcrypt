@@ -21,3 +21,7 @@ output = "this is a message."
 input = "another message here!"
 output = "1n4th2r m2ss1g2 h2r2!"
 
+How to Run
+----------
+- Install all dependencies by running `pipenv install --dev`
+- Run `pipenv run tests` to run all tests or just simply run `pytest`

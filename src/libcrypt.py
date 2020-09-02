@@ -1,3 +1,6 @@
+import re
+
+
 class LibCrypt(object):
     def __init__(self, codes):
         self._encryption_codes = {_: str(num) for _, num in codes.items()}
@@ -11,14 +14,14 @@ class LibCrypt(object):
         return any(map(str.isdigit, content))
 
     def _encode(self, content):
-        # TODO:
-        # Sting to Number mapping
-        pass
+        for item in self._encryption_codes.keys():
+            content = re.sub(item, self._encryption_codes[item], content)
+        return content
 
     def _decode(self, content):
-        # TODO:
-        # Number to String Mapping
-        pass
+        for item in self._decryption_codes.keys():
+            content = re.sub(item, self._decryption_codes[item], content)
+        return content
 
     def transform(self, content):
         return self._decode(content) if self._contains_digit(content) else self._encode(content)

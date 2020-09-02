@@ -21,9 +21,10 @@ class LibCrypt(object):
         pass
 
     def transform(self, content):
-        # TODO:
-        # Invoke correct method based of if there exists any digits in given string
-        pass
+        if self._contains_digit(content):
+            return self._decode(content)
+
+        return self._encode(content)
 
 
 def main():
